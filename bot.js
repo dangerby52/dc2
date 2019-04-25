@@ -132,13 +132,14 @@ client.on("guildMemberAdd", member => {
   if (!channel) return channel.send('#🙋otoban Kanalını Bulamıyorum :/');
 
 var role = member.guild.roles.find("id", "418504613331861505");
-if (!role) return channel.send('@Lv. 1 Crook Rolünü Bulamıyorum :/');
+if (!role) return channel.send('@[EASY] Üye Rolünü Bulamıyorum :/');
 
   member.addRole(role);
 
   channel.send(member + " Artık " + role + " Rolü İle Aramızda Hoşgeldin BRO^M :heart: ");
-
-  member.send("Aramıza hoş geldin! Artık @Lv. 1 Crook rolüne sahipsin!")
+	member.setNickname('[EASY] '+member.user.username);
+  member.send("Aramıza hoş geldin! Artık @[EASY] Üye rolüne sahipsin!");
+	member.send("Lütfen #kurallar isimli kanaldan sunucu kurallarını oku.");
 });
 
 client.on('guildMemberRemove',member=>{
