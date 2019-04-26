@@ -85,7 +85,7 @@ client.unload = command => {
 ///////////////////////
 client.on('message',msg=>{
   console.log(`LOG: S: ${msg.guild.name} M: ${msg.content} Y: ${msg.author.tag}`);
-  if (msg.content.toLowerCase().match(/(porn|nude|fuck|porno|siktir|orospu|çocuğu|cocugu|sikiş|sikeyim|sikim|sikerim)/g) && !msg.author.bot && msg.channel.type === "text" && msg.channel.permissionsFor(msg.guild.member(client.user)).has("MANAGE_MESSAGES")) {
+  if (msg.content.toLowerCase().match(/(porn|nude|fuck|porno|siktir|orospu|çocuğu|cocugu|sikiş|sikeyim|sikim|sikerim)/g) && msg.channel.type === "text" && msg.channel.permissionsFor(msg.guild.member(client.user)).has("MANAGE_MESSAGES")) {
     msg.delete(30).then(deletedMsg => {
       deletedMsg.reply("Üzgünüm Dostum Bu Sunucuda Küfür Edemezsin!").catch(e => {
         console.error(e);
@@ -94,7 +94,7 @@ client.on('message',msg=>{
       console.error(e);
     });
   }
-  if (msg.content.toLowerCase().match(/(discord\.gg\/)|(discordapp\.com\/invite\/)/g) && !msg.author.bot && msg.channel.type === "text" && msg.channel.permissionsFor(msg.guild.member(client.user)).has("MANAGE_MESSAGES")) {
+  if (msg.content.toLowerCase().match(/(discord\.gg\/)|(discordapp\.com\/invite\/)/g) && msg.channel.type === "text" && msg.channel.permissionsFor(msg.guild.member(client.user)).has("MANAGE_MESSAGES")) {
     msg.delete(30).then(deletedMsg => {
       deletedMsg.reply("Discord davet linki paylaştığını algıladık.Bu Sunucu SerchuVa No-Ads İle Korunmakta!").catch(e => {
         console.error(e);
