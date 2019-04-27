@@ -131,7 +131,7 @@ client.on("guildMemberAdd", member => {
   var channel = member.guild.channels.find("id", "570340180842643458");
   if (!channel) return channel.send('#🙋otoban Kanalını Bulamıyorum :/');
 
-var role = member.guild.roles.find("name", "[EASY] Üye");
+var role = member.guild.roles.find("name", "[EASY]Üye");
 if (!role) return channel.send('@[EASY] Üye Rolünü Bulamıyorum :/');
 
   member.addRole(role);
