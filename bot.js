@@ -132,15 +132,12 @@ client.on("guildMemberAdd", member => {
   if (!channel) return channel.send('#🙋otoban Kanalını Bulamıyorum :/');
 
 var role = member.guild.roles.find("id", "418504613331861505");
-var role2=member.guild.roles.find("id","571630055466336261")
 if (!role) return channel.send('@[EASY] Üye Rolünü Bulamıyorum :/');
-if (!role2) return channel.send('@[EASY] Oyunlar Rolünü Bulamıyorum :/');
 
   member.addRole(role);
-  member.addRole(role2);
-  channel.send(member + " Artık " + role + " ve "+role2+" Rolü İle Aramızda. Hoşgeldin BRO^M :heart: ");
+  channel.send(member + " Artık " + role +" Rolü İle Aramızda. Hoşgeldin BRO^M :heart: ");
   member.setNickname('[EASY] '+member.user.username);
-  member.send("Aramıza hoş geldin! Artık "+role+" ve "+role2+" rolüne sahipsin!")
+  member.send("Aramıza hoş geldin! Artık "+role+" rolüne sahipsin!")
   member.send("Lütfen #kurallar isimli kanaldan sunucu kurallarını okumayı unutma. :heart:");
 
 });
