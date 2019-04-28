@@ -14,7 +14,10 @@ var prefix = ayarlar.prefix;
 const log = message => {
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
 };
-
+client.on('ready', () => {
+  let channel = client.channels.get('572073351393181697');
+  channel.join()
+});
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 fs.readdir('./komutlar/', (err, files) => {
